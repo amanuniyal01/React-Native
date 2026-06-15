@@ -1,6 +1,7 @@
 
-import { Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import FlatList from "./components/FlatList";
 
 /**
  * Sample React Native App
@@ -11,13 +12,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 function App() {
   return (
     <SafeAreaView>
-      <View>
-        <Text>Hello , Aman Uniyal This Side.</Text>
-        <Text>Hello , Aman Uniyal This Side.</Text>
-        <Text>Hello , Aman Uniyal This Side.</Text>
-        <Text>Hello , Aman Uniyal This Side.</Text>
-        <Text>Hello , Aman Uniyal This Side.</Text>
-      </View>
+      <ScrollView>
+        <FlatList />
+      </ScrollView>
     </SafeAreaView>
 
   )
