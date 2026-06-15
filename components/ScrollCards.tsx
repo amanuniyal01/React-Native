@@ -5,7 +5,16 @@ const ScrollCards = () => {
     return (
         <View>
             <Text style={styles.headerText}>ScrollCards</Text>
-            <ScrollView horizontal={true} style={styles.mainContainer}>
+            <ScrollView contentContainerStyle={styles.mainContainer} horizontal={true}>
+                <View style={[styles.cardComponent, styles.cardElevated]}>
+                    <Text>Tap Me</Text>
+                </View>
+                <View style={[styles.cardComponent, styles.cardElevated]}>
+                    <Text>Tap Me</Text>
+                </View>
+                <View style={[styles.cardComponent, styles.cardElevated]}>
+                    <Text>Tap Me</Text>
+                </View>
                 <View style={[styles.cardComponent, styles.cardElevated]}>
                     <Text>Tap Me</Text>
                 </View>
@@ -36,18 +45,18 @@ const styles = StyleSheet.create({
         width: 120,
         height: 120,
         borderRadius: 12,
+        marginHorizontal: 3
 
     },
     cardElevated: {
         backgroundColor: "rgba(158, 180, 158, 0.77)",
-        margin: 5,
         elevation: 3
 
     },
     mainContainer: {
         marginTop: 10,
-        flex: 1,
-        flexDirection: "row",
-        marginInline: 8,
+        marginHorizontal: 8,
+        flex: 1
+
     }
 })
