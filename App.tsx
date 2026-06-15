@@ -2,6 +2,7 @@
 import { ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FlatList from "./components/FlatList";
+import ScrollCards from "./components/ScrollCards";
 
 /**
  * Sample React Native App
@@ -14,6 +15,7 @@ function App() {
     <SafeAreaView>
       <ScrollView>
         <FlatList />
+        <ScrollCards />
       </ScrollView>
     </SafeAreaView>
 
