@@ -37,7 +37,8 @@ export default ScrollCards
 const styles = StyleSheet.create({
     headerText: {
         fontSize: 30,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        paddingHorizontal: 10
     },
     cardComponent: {
         alignItems: "center",
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
 
     },
     mainContainer: {
-        marginTop: 10,
+        marginVertical: 10,
         marginHorizontal: 8,
         flex: 1
 

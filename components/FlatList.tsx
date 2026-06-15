@@ -27,10 +27,11 @@ export class FlatList extends Component {
 const styles = StyleSheet.create({
     headerText: {
         fontSize: 30,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        paddingHorizontal: 10
     },
     mainContainer: {
-        marginTop: 10,
+        marginVertical: 13,
         flex: 1,
         flexDirection: "row",
         marginInline: 8,
