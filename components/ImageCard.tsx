@@ -4,14 +4,14 @@ import React, { Component } from 'react'
 export default class ImageCard extends Component {
     render() {
         return (
-            <View>
+            <View style={styles.mainContainer}>
                 <Text style={styles.headerText}>ImageCard</Text>
                 <View style={styles.container}>
-                    <View >
+                    <View style={styles.imageWrapper} >
                         <Image style={styles.cardImage} source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbeYR8ahKPHgbDasK2AuiXZecQ2XIh_xyZTg&s" }} />
                     </View>
 
-                    <View>
+                    <View style={styles.cardBody}>
                         <Text style={styles.cardTitle} >Taj Mahal</Text>
                         <Text style={styles.cardlabel}>Taj Mahal , Situated in Agra.</Text>
                         <Text style={styles.cardDescription}>Taj Mahal , Situated in Agra.It was built by Mughals, Shah Jahan. Right Now its
@@ -31,28 +31,46 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10
     },
     container: {
-        marginVertical: 13,
-        flex: 1,
-        // paddingHorizontal: 10
+        marginVertical: 12,
+        borderRadius: 12,
+        backgroundColor: "#f2f2f292",
+        elevation: 6,
+        shadowColor: "#000",
+        shadowOpacity: 0.2,
+        shadowRadius: 8,
+        shadowOffset: { width: 0, height: 4 },
+        overflow: "hidden"
     },
     cardImage: {
-        height: 100,
-        marginHorizontal: 12
+        height: 200,
+        width: "100%",
+        marginBottom: 12,
+    },
+    cardBody: {
+        flexGrow: 1,
+        flex: 1,
+        paddingHorizontal: 13
     },
     cardTitle: {
         fontSize: 30,
-        fontWeight: "bold",
-
-
+        fontWeight: "700",
+        marginBottom: 6
+    },
+    mainContainer: {
+        padding: 9
     },
     cardlabel: {
-        fontSize: 24,
-        fontWeight: "semibold"
-
+        fontSize: 20,
+        fontWeight: "500",
+        color: "#666",
+        marginBottom: 6
     },
     cardDescription: {
         fontSize: 18,
-
+        color: "#444",
+        lineHeight: 20
+    },
+    imageWrapper: {
 
     }
 })
