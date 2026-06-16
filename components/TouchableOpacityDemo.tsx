@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        marginVertical: 12
+        marginVertical: 12,
+        elevation: 8
     }
 })

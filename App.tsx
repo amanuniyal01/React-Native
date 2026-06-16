@@ -6,6 +6,7 @@ import ScrollCards from "./components/ScrollCards";
 import ImageCard from "./components/ImageCard";
 // import DeepLinking from "./components/DeepLinking";
 import TouchableOpacityDemo from "./components/TouchableOpacityDemo";
+import Gallery from "./components/Gallery";
 
 /**
  * Sample React Native App
@@ -22,6 +23,7 @@ function App() {
         <ImageCard />
         {/* <DeepLinking /> */}
         <TouchableOpacityDemo />
+        <Gallery />
       </ScrollView>
     </SafeAreaView>
 
