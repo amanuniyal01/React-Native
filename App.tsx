@@ -4,7 +4,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import FlatList from "./components/FlatList";
 import ScrollCards from "./components/ScrollCards";
 import ImageCard from "./components/ImageCard";
-import DeepLinking from "./components/DeepLinking";
+// import DeepLinking from "./components/DeepLinking";
+import TouchableOpacityDemo from "./components/TouchableOpacityDemo";
 
 /**
  * Sample React Native App
@@ -19,7 +20,8 @@ function App() {
         <FlatList />
         <ScrollCards />
         <ImageCard />
-        <DeepLinking />
+        {/* <DeepLinking /> */}
+        <TouchableOpacityDemo />
       </ScrollView>
     </SafeAreaView>
 
