@@ -7,6 +7,7 @@ import ImageCard from "./components/ImageCard";
 // import DeepLinking from "./components/DeepLinking";
 import TouchableOpacityDemo from "./components/TouchableOpacityDemo";
 import Gallery from "./components/Gallery";
+import ChipsInput from "./components/ChipsInput/ChipsInput";
 
 /**
  * Sample React Native App
@@ -18,12 +19,13 @@ function App() {
   return (
     <SafeAreaView>
       <ScrollView>
-        <FlatList />
+        {/* <FlatList />
         <ScrollCards />
         <ImageCard />
-        {/* <DeepLinking /> */}
+        <DeepLinking />
         <TouchableOpacityDemo />
-        <Gallery />
+        <Gallery /> */}
+        <ChipsInput />
       </ScrollView>
     </SafeAreaView>
 
