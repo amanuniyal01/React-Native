@@ -8,7 +8,7 @@ const TouchableOpacityDemo = () => {
             <Text style={styles.headerText}>Touchable Opacity</Text>
             <View style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <TouchableOpacity onLongPress={() => Alert.alert("Long Press")} onPress={() => setVisible(!visible)} activeOpacity={0.5} style={styles.buttonstyle}>
-                    <Text> Press Me</Text>
+                    <Text style={{ color: "white" }}> {visible ? "Not Visible" : "Visible"}</Text>
                 </TouchableOpacity>
                 {visible && <Text style={{ color: "red", fontWeight: "bold", fontSize: 23 }}>
                     Hey ! I am Visible
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10
     },
     buttonstyle: {
-        backgroundColor: "rgba(246, 8, 8, 0.66)",
+        backgroundColor: "rgba(246, 8, 8, 0.83)",
         borderRadius: 6,
         width: 250,
         paddingBlock: 20,

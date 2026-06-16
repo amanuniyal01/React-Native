@@ -17,6 +17,7 @@ export default class ImageCard extends Component {
                         <Text style={styles.cardDescription}>Taj Mahal , Situated in Agra.It was built by Mughals, Shah Jahan. Right Now its
                             one of the most popular tourist place of india. Foreigners loves to visit here and Enjoys a lot.
                         </Text>
+
                     </View>
                 </View>
             </View>
@@ -68,7 +69,8 @@ const styles = StyleSheet.create({
     cardDescription: {
         fontSize: 18,
         color: "#444",
-        lineHeight: 20
+        lineHeight: 20,
+        marginBottom: 10
     },
     imageWrapper: {
 
