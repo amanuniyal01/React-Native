@@ -22,7 +22,7 @@ const ChipsInput = () => {
         setChips(prev => [...prev, trimmed])
         setInput("")
         setError("")
-        Keyboard.dismiss()
+
     }
 
     const handleRemove = (index: number) => {
@@ -39,7 +39,7 @@ const ChipsInput = () => {
             <Text style={styles.title}>Chips Input</Text>
             <Text style={styles.subtitle}>Type a tag and press Add</Text>
 
-            {/* Input Row */}
+
             <View style={styles.inputRow}>
                 <TextInput
                     ref={inputRef}
@@ -57,10 +57,10 @@ const ChipsInput = () => {
                 </TouchableOpacity>
             </View>
 
-            {/* Error */}
+
             {error ? <Text style={styles.error}>{error}</Text> : null}
 
-            {/* Chips */}
+
             {chips.length > 0 ? (
                 <View style={styles.chipsContainer}>
                     {chips.map((chip, index) => (
@@ -81,7 +81,6 @@ const ChipsInput = () => {
                 </View>
             )}
 
-            {/* Footer Row */}
             {chips.length > 0 && (
                 <View style={styles.footer}>
                     <Text style={styles.chipCount}>{chips.length} chip{chips.length > 1 ? "s" : ""}</Text>
