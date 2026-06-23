@@ -12,6 +12,7 @@ import ActivityIndicator from "./components/ActivityIndicator/ActivityIndicator"
 import ActivityIndicatorPractice from "./components/ActivityIndicator/ActivityIndicator";
 import { useState } from "react";
 import ModalPractice from "./components/Modal/ModalPractice";
+import StatusBarPractice from "./components/StatusBarPractice/StatusBarPractice";
 
 /**
  * Sample React Native App
@@ -32,7 +33,8 @@ function App() {
           </TouchableOpacity>
         </View>
         {showData && <ActivityIndicatorPractice />} */}
-        <ModalPractice />
+        {/* <ModalPractice /> */}
+        <StatusBarPractice />
       </SafeAreaView>
     </SafeAreaProvider>
 

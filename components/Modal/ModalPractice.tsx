@@ -32,7 +32,7 @@ const ModalPractice = () => {
             </Modal>
             <View style={styles.centerArea}>
                 <Pressable
-                    onPress={() => setModalOpen(true)}
+                    onLongPress={() => setModalOpen(true)}
                     style={styles.button}>
                     <Text style={styles.btnText}>Show Modal</Text>
                 </Pressable>
