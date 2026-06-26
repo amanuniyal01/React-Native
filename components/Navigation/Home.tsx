@@ -1,23 +1,33 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import React from 'react'
+import React, { useState } from 'react'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../../type'
-import Sidebar from '../Sidebar/Sidebar'
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>
 type Props = {
     bgColor: boolean
 }
 const Home = ({ bgColor }: Props) => {
     const navigation = useNavigation<NavigationProp>()
+    const [fName, setFName] = useState<string>("")
+    const name = "Aman Uniyal";
+    const gender = "Male"
     return (
         <View style={[styles.container, { backgroundColor: bgColor ? "red" : "rgba(34, 166, 166, 0.7)" }]}>
             <Text>
                 Home Screen
             </Text>
-            <TouchableOpacity onPress={() => navigation.navigate('login')}>
+            <TouchableOpacity onPress={() => navigation.navigate('login', {
+                name, gender, fName
+            })}>
                 <Text style={styles.btn}>Route me to Login</Text>
             </TouchableOpacity>
+            <TextInput onChangeText={(text) => setFName(text)} style={{
+                borderRadius: 10,
+                borderColor: "black",
+                borderWidth: 4,
+                paddingHorizontal: 15
+            }} placeholder='Enter your Name' />
         </View>
     )
 }

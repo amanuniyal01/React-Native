@@ -1,19 +1,28 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { useNavigation } from '@react-navigation/core'
+import { RouteProp, useNavigation } from '@react-navigation/core'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../../type'
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>
-const Login = () => {
+type LoginRouteProp = RouteProp<RootStackParamList, "login">;
+type Props = {
+    route: LoginRouteProp;
+};
+const Login = ({ route }: Props) => {
     const navigation = useNavigation<NavigationProp>()
+
+    const { name, gender, fName } = route.params || {}
     return (
         <View style={styles.container}>
             <Text>Login</Text>
             <TouchableOpacity
                 onPress={() => navigation.navigate("home")}>
                 <Text style={styles.btn}>Route me to Home</Text>
+                <Text style={{ fontSize: 40, fontWeight: "bold" }}>{name}</Text>
+                <Text style={{ fontSize: 40, fontWeight: "bold" }}>{gender}</Text>
+                <Text style={{ fontSize: 40, fontWeight: "bold" }}>{fName}</Text>
             </TouchableOpacity>
-        </View>
+        </View >
     )
 }
 
