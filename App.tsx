@@ -2,6 +2,8 @@ import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./components/Navigation/Home";
 import Login from "./components/Navigation/Login";
+import { Text, TouchableOpacity, View } from "react-native";
+import { useState } from "react";
 
 /**
  * Sample React Native App
@@ -9,13 +11,26 @@ import Login from "./components/Navigation/Login";
  *
  * @format
  */
+const Stack = createNativeStackNavigator()
 function App() {
   // const [showData, setShpwData] = useState(false)
-  const Stack = createNativeStackNavigator()
+  const [bgColor, setBgColor] = useState(false)
+  const handleBackground = () => {
+    setBgColor((prev) => !prev)
+  }
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="home" component={Home} options={{
+        <Stack.Screen name="home" options={{
+          headerLeft: () => {
+            return (
+              <View >
+                <TouchableOpacity onPress={handleBackground} style={{ backgroundColor: "red", padding: 10, borderRadius: 10 }}>
+                  <Text style={{ color: "white", fontWeight: "bold" }}>Change Color</Text>
+                </TouchableOpacity>
+              </View>
+            )
+          },
           title: "Home Screen",
           headerTitleAlign: "center",
           headerTitleStyle: {
@@ -28,7 +43,9 @@ function App() {
             backgroundColor: "rgba(33, 159, 166, 0.58)"
           },
           animation: "slide_from_right"
-        }} />
+        }} >
+          {() => <Home bgColor={bgColor} />}
+        </Stack.Screen>
         <Stack.Screen name="login" component={Login} options={{ title: "Login Page" }} />
       </Stack.Navigator>
     </NavigationContainer>

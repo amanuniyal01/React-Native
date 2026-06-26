@@ -4,10 +4,13 @@ import React from 'react'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../../type'
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>
-const Home = () => {
+type Props = {
+    bgColor: boolean
+}
+const Home = ({ bgColor }: Props) => {
     const navigation = useNavigation<NavigationProp>()
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, { backgroundColor: bgColor ? "red" : "rgba(34, 166, 166, 0.7)" }]}>
             <Text>
                 Home Screen
             </Text>
