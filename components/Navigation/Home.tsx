@@ -1,9 +1,11 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import React from 'react'
-
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { RootStackParamList } from '../../type'
+type NavigationProp = NativeStackNavigationProp<RootStackParamList>
 const Home = () => {
-    const navigation = useNavigation()
+    const navigation = useNavigation<NavigationProp>()
     return (
         <View style={styles.container}>
             <Text>

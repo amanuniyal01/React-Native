@@ -15,8 +15,21 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="home" component={Home} />
-        <Stack.Screen name="login" component={Login} />
+        <Stack.Screen name="home" component={Home} options={{
+          title: "Home Screen",
+          headerTitleAlign: "center",
+          headerTitleStyle: {
+            fontSize: 30,
+            fontWeight: "bold",
+
+          },
+          headerTintColor: "white",
+          headerStyle: {
+            backgroundColor: "rgba(33, 159, 166, 0.58)"
+          },
+          animation: "slide_from_right"
+        }} />
+        <Stack.Screen name="login" component={Login} options={{ title: "Login Page" }} />
       </Stack.Navigator>
     </NavigationContainer>
   )
