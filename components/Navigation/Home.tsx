@@ -4,16 +4,14 @@ import React, { useState } from 'react'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../../type'
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>
-type Props = {
-    bgColor: boolean
-}
-const Home = ({ bgColor }: Props) => {
+
+const Home = () => {
     const navigation = useNavigation<NavigationProp>()
     const [fName, setFName] = useState<string>("")
     const name = "Aman Uniyal";
     const gender = "Male"
     return (
-        <View style={[styles.container, { backgroundColor: bgColor ? "red" : "rgba(34, 166, 166, 0.7)" }]}>
+        <View style={[styles.container, { backgroundColor: "rgba(28, 179, 173, 0.67)" }]}>
             <Text>
                 Home Screen
             </Text>
