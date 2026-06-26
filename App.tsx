@@ -4,6 +4,7 @@ import Home from "./components/Navigation/Home";
 import Login from "./components/Navigation/Login";
 import { Text, TouchableOpacity, View } from "react-native";
 import { useState } from "react";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 /**
  * Sample React Native App
@@ -15,6 +16,7 @@ const Stack = createNativeStackNavigator()
 function App() {
   // const [showData, setShpwData] = useState(false)
   const [bgColor, setBgColor] = useState(false)
+  const [isSidebar, setIsSideBar] = useState(false)
   const handleBackground = () => {
     setBgColor((prev) => !prev)
   }
@@ -31,8 +33,16 @@ function App() {
               </View>
             )
           },
+          headerRight: () => {
+            return (
+              <TouchableOpacity onPress={() => setIsSideBar(!isSidebar)} style={{ backgroundColor: "rgba(13, 105, 198, 0.73)", padding: 10, borderRadius: 10 }}>
+                <Text style={{ color: "white", fontWeight: "bold" }}>
+                  Open Sidebar
+                </Text >
+              </TouchableOpacity>
+            )
+          },
           title: "Home Screen",
-          headerTitleAlign: "center",
           headerTitleStyle: {
             fontSize: 30,
             fontWeight: "bold",
@@ -47,8 +57,9 @@ function App() {
           {() => <Home bgColor={bgColor} />}
         </Stack.Screen>
         <Stack.Screen name="login" component={Login} options={{ title: "Login Page" }} />
-      </Stack.Navigator>
-    </NavigationContainer>
+      </Stack.Navigator >
+      {isSidebar && < Sidebar sidebar={isSidebar} setsidebar={setIsSideBar} />}
+    </NavigationContainer >
   )
 }
 

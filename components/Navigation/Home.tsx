@@ -3,6 +3,7 @@ import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../../type'
+import Sidebar from '../Sidebar/Sidebar'
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>
 type Props = {
     bgColor: boolean
